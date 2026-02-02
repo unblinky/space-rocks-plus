@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://duiesnqf505sd"]
+
+[ext_resource type="Script" uid="uid://b2mkb7rppk6pj" path="res://Rock/Rock.gd" id="1_wuppp"]
+
+[node name="Rock" type="Node2D" unique_id=205476171]
+script = ExtResource("1_wuppp")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1785594501]
+color = Color(0.60456246, 0.5810292, 0.4556589, 1)
+polygon = PackedVector2Array(58, -42, -1, -24, -20, -63, -62, -6, -24, 41, 44, 64, 66, 26, 78, -1)
