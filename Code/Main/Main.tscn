@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cgke8bpq05cbs" path="res://Main/Main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://duiesnqf505sd" path="res://Rock/Rock.tscn" id="2_83ytx"]
+[ext_resource type="PackedScene" uid="uid://dhmmlqnos0d8n" path="res://Ship/Ship.tscn" id="3_amygn"]
 
 [node name="Main" type="Node" unique_id=989623172]
 script = ExtResource("1")
@@ -13,3 +14,6 @@ speed = 50.0
 [node name="Rock2" parent="." unique_id=440210740 instance=ExtResource("2_83ytx")]
 position = Vector2(777, 328)
 speed = 300.0
+
+[node name="Ship" parent="." unique_id=847243706 instance=ExtResource("3_amygn")]
+position = Vector2(541, 399)
