@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://db3otv5j2cbxb"]
+
+[ext_resource type="Script" uid="uid://b3bidixqrwjxb" path="res://Bullet/Bullet.gd" id="1_qratc"]
+
+[node name="Bullet" type="Node2D" unique_id=490998320]
+script = ExtResource("1_qratc")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1939225971]
+color = Color(0.83472717, 0.23181972, 0.6745137, 1)
+polygon = PackedVector2Array(-0.29057562, 7.963656, -4.4484696, -0.35213232, 0.3455912, -4.5685673, 6.8071146, -0.26088428, 3.4817295, 4.9333453, 1.5420431, 19.287037)

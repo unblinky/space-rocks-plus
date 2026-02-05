@@ -5,5 +5,10 @@
 [node name="Ship" type="Node2D" unique_id=847243706]
 script = ExtResource("1_11244")
 
-[node name="Line2D" type="Line2D" parent="." unique_id=769128378]
+[node name="Hull" type="Line2D" parent="." unique_id=769128378]
 points = PackedVector2Array(2, -34, -19, 10, 0, -3, 21, 8, 2, -35)
+default_color = Color(0.4853003, 0.70452154, 0.82498246, 1)
+
+[node name="Flame" type="Polygon2D" parent="." unique_id=1280344611]
+color = Color(0.90183246, 0.74719435, 0.29116035, 1)
+polygon = PackedVector2Array(0, 12, -10, 20, 0, 38, 13, 21)
