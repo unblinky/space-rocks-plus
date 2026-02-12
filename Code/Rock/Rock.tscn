@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://dlj2el268n4rh" path="res://Rock/assets/rock_b.png" id="3_c4a8t"]
 [ext_resource type="Texture2D" uid="uid://dhvyy56v216bg" path="res://Rock/assets/rock_c.png" id="4_ru0k0"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_751ln"]
+radius = 53.600372
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_m1swu"]
 animations = [{
 "frames": [{
@@ -22,8 +25,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Rock" type="Node2D" unique_id=205476171]
+[node name="Rock" type="Area2D" unique_id=856984719]
 script = ExtResource("1_wuppp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1158945913]
+shape = SubResource("CircleShape2D_751ln")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1785594501]
 visible = false
@@ -35,4 +41,3 @@ texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_m1swu")
 frame = 2
-frame_progress = 0.66074896

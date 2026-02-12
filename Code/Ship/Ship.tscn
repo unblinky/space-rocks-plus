@@ -1,14 +1,36 @@
 [gd_scene format=3 uid="uid://dhmmlqnos0d8n"]
 
 [ext_resource type="Script" uid="uid://buj7ayutme6mf" path="res://Ship/Ship.gd" id="1_11244"]
+[ext_resource type="Texture2D" uid="uid://d6pogxob62m3" path="res://Ship/assets/ship.png" id="2_2s2wp"]
 
-[node name="Ship" type="Node2D" unique_id=847243706]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2s2wp"]
+size = Vector2(50, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5p3wb"]
+size = Vector2(14, 37.5)
+
+[node name="Ship" type="Area2D" unique_id=1794747543]
 script = ExtResource("1_11244")
 
+[node name="WingsBox" type="CollisionShape2D" parent="." unique_id=476080105]
+position = Vector2(0, 10.5)
+shape = SubResource("RectangleShape2D_2s2wp")
+
+[node name="HullBox" type="CollisionShape2D" parent="." unique_id=620712405]
+position = Vector2(1, -8.75)
+shape = SubResource("RectangleShape2D_5p3wb")
+
 [node name="Hull" type="Line2D" parent="." unique_id=769128378]
+visible = false
 points = PackedVector2Array(2, -34, -19, 10, 0, -3, 21, 8, 2, -35)
 default_color = Color(0.4853003, 0.70452154, 0.82498246, 1)
 
 [node name="Flame" type="Polygon2D" parent="." unique_id=1280344611]
+visible = false
 color = Color(0.90183246, 0.74719435, 0.29116035, 1)
 polygon = PackedVector2Array(0, 12, -10, 20, 0, 38, 13, 21)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1790826746]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_2s2wp")

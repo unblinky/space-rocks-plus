@@ -3,10 +3,18 @@
 [ext_resource type="Script" uid="uid://b3bidixqrwjxb" path="res://Bullet/Bullet.gd" id="1_qratc"]
 [ext_resource type="Texture2D" uid="uid://bvgu5t80vov6k" path="res://Bullet/assets/bullet.png" id="2_v7qj8"]
 
-[node name="Bullet" type="Node2D" unique_id=490998320]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7qj8"]
+size = Vector2(16, 42)
+
+[node name="Bullet" type="Area2D" unique_id=1364330677]
 script = ExtResource("1_qratc")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=124642762]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_v7qj8")
+
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1939225971]
+visible = false
 color = Color(0.83472717, 0.23181972, 0.6745137, 1)
 polygon = PackedVector2Array(-0.29057562, 7.963656, -4.4484696, -0.35213232, 0.3455912, -4.5685673, 6.8071146, -0.26088428, 3.4817295, 4.9333453, 1.5420431, 19.287037)
 
@@ -15,3 +23,6 @@ texture_filter = 1
 position = Vector2(0, 9)
 scale = Vector2(2, 2)
 texture = ExtResource("2_v7qj8")
+
+[node name="Timer" type="Timer" parent="." unique_id=1737836001]
+autostart = true

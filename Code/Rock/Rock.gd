@@ -8,10 +8,30 @@ var velocity: Vector2 = Vector2.ZERO # px / sec.
 @export var speed: float = 150
 
 func _ready() -> void:
+	# Hookup the collision signals.
+	area_entered.connect(on_area_entered)
+	
 	velocity = Vector2(randf_range(-speed, speed), randf_range(-speed, speed)) 
 	# HACK: Not dynamic.
-	sprites.frame = randi_range(0, 3) 
+	sprites.frame = randi_range(0, 3)
 
 func _process(delta: float) -> void:
 	super._process(delta)
 	position += velocity * delta
+
+func split():
+	# TODO: Split rocks into to 2 smaller rocks.
+	pass
+
+func destroy():
+	queue_free()
+
+func on_area_entered(other_area: Area2D):
+	print(other_area)
+	if other_area is Bullet:
+		other_area.destroy()
+		destroy()
+	
+	if other_area is Ship:
+		other_area.destroy()
+		destroy()

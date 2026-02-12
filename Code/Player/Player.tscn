@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bpi51limxqldb"]
+
+[ext_resource type="Texture2D" uid="uid://d6pogxob62m3" path="res://Ship/assets/ship.png" id="1_3qydi"]
+[ext_resource type="Script" uid="uid://bx3h3mk5eqpnr" path="res://Player/Player.gd" id="1_q3lat"]
+
+[node name="Player" type="PanelContainer" unique_id=388721277]
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 195.0
+offset_bottom = 80.0
+script = ExtResource("1_q3lat")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=2062923651]
+layout_mode = 2
+
+[node name="ScoreUI" type="Label" parent="VBox" unique_id=478006217]
+layout_mode = 2
+text = "Score: 0123456789"
+
+[node name="LivesUI" type="HBoxContainer" parent="VBox" unique_id=1062200276]
+layout_mode = 2
+
+[node name="Life" type="TextureRect" parent="VBox/LivesUI" unique_id=1547424024]
+layout_mode = 2
+texture = ExtResource("1_3qydi")
+
+[node name="Life2" type="TextureRect" parent="VBox/LivesUI" unique_id=2086440467]
+layout_mode = 2
+texture = ExtResource("1_3qydi")
+
+[node name="Life3" type="TextureRect" parent="VBox/LivesUI" unique_id=1517813042]
+layout_mode = 2
+texture = ExtResource("1_3qydi")

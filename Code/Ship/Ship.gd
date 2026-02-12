@@ -12,7 +12,7 @@ func _ready() -> void:
 	flame.hide()
 
 func _process(delta: float) -> void:
-	super._process(delta)
+	super._process(delta) # Need to ScreenWrap?
 	
 	if Input.is_action_pressed("turn_ccw"):
 		rotation_degrees -= turn_speed * delta
@@ -37,4 +37,6 @@ func _process(delta: float) -> void:
 		print("fire")
 
 	position += velocity * delta
-	
+
+func destroy():
+	queue_free()

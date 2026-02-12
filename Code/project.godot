@@ -19,6 +19,10 @@ run/main_scene="res://Main/Main.tscn"
 config/features=PackedStringArray("4.6")
 config/icon="res://Main/icon.png"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
+
 [input]
 
 turn_cw={
