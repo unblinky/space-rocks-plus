@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bpsqeanl3v4lv"
-path="res://.godot/imported/IBMPlexMono-Medium.ttf-3590884d1d64558ebc9431720b9f3a97.fontdata"
+uid="uid://db14k7rjmflvy"
+path="res://.godot/imported/IBMPlexMono-Thin.ttf-0c0b8c8189540168db776931513da9ff.fontdata"
 
 [deps]
 
-source_file="res://Player/assets/IBM_Plex_Mono/IBMPlexMono-Medium.ttf"
-dest_files=["res://.godot/imported/IBMPlexMono-Medium.ttf-3590884d1d64558ebc9431720b9f3a97.fontdata"]
+source_file="res://Player/assets/fonts/IBM_Plex_Mono/IBMPlexMono-Thin.ttf"
+dest_files=["res://.godot/imported/IBMPlexMono-Thin.ttf-0c0b8c8189540168db776931513da9ff.fontdata"]
 
 [params]
 

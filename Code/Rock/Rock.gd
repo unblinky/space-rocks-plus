@@ -29,9 +29,11 @@ func destroy():
 func on_area_entered(other_area: Area2D):
 	print(other_area)
 	if other_area is Bullet:
+		other_area.ship.player.update_score(3)
 		other_area.destroy()
-		destroy()
+		self.destroy()
 	
-	if other_area is Ship:
+	elif other_area is Ship:
 		other_area.destroy()
-		destroy()
+		if self != null:
+			self.destroy()

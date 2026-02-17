@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://bpi51limxqldb"]
 
-[ext_resource type="Texture2D" uid="uid://d6pogxob62m3" path="res://Ship/assets/ship.png" id="1_3qydi"]
 [ext_resource type="Script" uid="uid://bx3h3mk5eqpnr" path="res://Player/Player.gd" id="1_q3lat"]
+[ext_resource type="PackedScene" uid="uid://bhnuy8c5hwrp6" path="res://Player/assets/life.tscn" id="2_q3lat"]
 
 [node name="Player" type="PanelContainer" unique_id=388721277]
 offset_left = 10.0
 offset_top = 8.0
-offset_right = 195.0
-offset_bottom = 80.0
+offset_right = 27.0
+offset_bottom = 35.0
 script = ExtResource("1_q3lat")
 
 [node name="VBox" type="VBoxContainer" parent="." unique_id=2062923651]
@@ -15,19 +15,28 @@ layout_mode = 2
 
 [node name="ScoreUI" type="Label" parent="VBox" unique_id=478006217]
 layout_mode = 2
-text = "Score: 0123456789"
+text = "123231231231"
 
 [node name="LivesUI" type="HBoxContainer" parent="VBox" unique_id=1062200276]
 layout_mode = 2
 
-[node name="Life" type="TextureRect" parent="VBox/LivesUI" unique_id=1547424024]
+[node name="Life" parent="VBox/LivesUI" unique_id=1842059185 instance=ExtResource("2_q3lat")]
 layout_mode = 2
-texture = ExtResource("1_3qydi")
 
-[node name="Life2" type="TextureRect" parent="VBox/LivesUI" unique_id=2086440467]
+[node name="Life2" parent="VBox/LivesUI" unique_id=1575223880 instance=ExtResource("2_q3lat")]
 layout_mode = 2
-texture = ExtResource("1_3qydi")
 
-[node name="Life3" type="TextureRect" parent="VBox/LivesUI" unique_id=1517813042]
+[node name="Life3" parent="VBox/LivesUI" unique_id=2071022385 instance=ExtResource("2_q3lat")]
 layout_mode = 2
-texture = ExtResource("1_3qydi")
+
+[node name="Life4" parent="VBox/LivesUI" unique_id=2022403655 instance=ExtResource("2_q3lat")]
+layout_mode = 2
+
+[node name="Life5" parent="VBox/LivesUI" unique_id=1651585260 instance=ExtResource("2_q3lat")]
+layout_mode = 2
+
+[node name="Life6" parent="VBox/LivesUI" unique_id=1026647070 instance=ExtResource("2_q3lat")]
+layout_mode = 2
+
+[node name="Life7" parent="VBox/LivesUI" unique_id=1955336839 instance=ExtResource("2_q3lat")]
+layout_mode = 2

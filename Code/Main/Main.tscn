@@ -4,20 +4,18 @@
 [ext_resource type="PackedScene" uid="uid://duiesnqf505sd" path="res://Rock/Rock.tscn" id="2_83ytx"]
 [ext_resource type="PackedScene" uid="uid://dhmmlqnos0d8n" path="res://Ship/Ship.tscn" id="3_amygn"]
 [ext_resource type="PackedScene" uid="uid://bpi51limxqldb" path="res://Player/Player.tscn" id="4_ps1la"]
+[ext_resource type="PackedScene" uid="uid://db3otv5j2cbxb" path="res://Bullet/Bullet.tscn" id="5_6aewd"]
 
 [node name="Main" type="Node" unique_id=989623172]
 script = ExtResource("1")
 
-[node name="Rock" parent="." unique_id=205476171 instance=ExtResource("2_83ytx")]
-position = Vector2(433, 184)
-speed = 50.0
-
-[node name="Rock2" parent="." unique_id=440210740 instance=ExtResource("2_83ytx")]
-position = Vector2(751, 309)
-rotation = 3.1727662
-speed = 300.0
-
-[node name="Ship" parent="." unique_id=847243706 instance=ExtResource("3_amygn")]
-position = Vector2(585, 373)
-
 [node name="Player" parent="." unique_id=388721277 instance=ExtResource("4_ps1la")]
+
+[node name="Rock" parent="." unique_id=856984719 instance=ExtResource("2_83ytx")]
+position = Vector2(570, 327)
+
+[node name="Ship" parent="." unique_id=1794747543 instance=ExtResource("3_amygn")]
+position = Vector2(426, 413)
+
+[node name="Bullet" parent="." unique_id=1364330677 instance=ExtResource("5_6aewd")]
+position = Vector2(914, 378)
