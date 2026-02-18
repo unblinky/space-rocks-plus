@@ -1,6 +1,7 @@
 extends ScreenWrapper
 class_name Rock
 
+const ROCK = preload("res://Rock/Rock.tscn")
 @onready var sprites: AnimatedSprite2D = $Sprites
 
 var main: Main
@@ -20,8 +21,14 @@ func _process(delta: float) -> void:
 	position += velocity * delta
 
 func split():
-	# TODO: Split rocks into to 2 smaller rocks.
-	pass
+	if scale.x > 0.25:
+		for i in 2:
+			var rock: Rock = ROCK.instantiate()
+			rock.position = position
+			rock.scale = scale * 0.5
+			get_parent().add_child(rock)
+	
+	destroy()
 
 func destroy():
 	queue_free()
@@ -29,9 +36,9 @@ func destroy():
 func on_area_entered(other_area: Area2D):
 	print(other_area)
 	if other_area is Bullet:
-		other_area.ship.player.update_score(3)
+		other_area.player.update_score(1)
 		other_area.destroy()
-		self.destroy()
+		self.call_deferred("split")
 	
 	elif other_area is Ship:
 		other_area.destroy()
