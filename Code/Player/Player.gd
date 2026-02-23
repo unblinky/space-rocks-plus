@@ -12,6 +12,7 @@ var score: int = 0 # TODO: Load Hi Score from save file.
 var lives: int = 5
 
 func _ready() -> void:
+	show()
 	update_lives(0)
 	update_score(0)
 
