@@ -42,6 +42,7 @@ func _process(delta: float) -> void:
 
 	position += velocity * delta
 
+## Destroy the ship and free the resourses.
 func destroy():
 	player.ship = null
 	queue_free()

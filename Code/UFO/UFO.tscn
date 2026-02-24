@@ -18,3 +18,7 @@ shape = SubResource("RectangleShape2D_7cik0")
 
 [node name="UpDownTimer" type="Timer" parent="." unique_id=1130516417]
 autostart = true
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=1852213036]
+wait_time = 0.751
+autostart = true

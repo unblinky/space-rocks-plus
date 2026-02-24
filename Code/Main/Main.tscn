@@ -17,3 +17,4 @@ offset_bottom = 59.0
 visible = false
 
 [node name="UfoTimer" type="Timer" parent="." unique_id=536544741]
+autostart = true
