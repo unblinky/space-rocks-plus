@@ -36,7 +36,8 @@ func destroy():
 func on_area_entered(other_area: Area2D):
 	print(other_area)
 	if other_area is Bullet:
-		other_area.player.update_score(1)
+		if other_area.player != null:
+			other_area.player.update_score(1)
 		other_area.destroy()
 		self.call_deferred("split")
 	

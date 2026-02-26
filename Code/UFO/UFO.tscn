@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://biehskg2qpme5"]
 
 [ext_resource type="Script" uid="uid://cilukiebm07cc" path="res://UFO/UFO.gd" id="1_7cik0"]
+[ext_resource type="Texture2D" uid="uid://cslp0gs1slvtj" path="res://UFO/assets/ufo.png" id="2_dw4pw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7cik0"]
 size = Vector2(36, 28)
@@ -8,7 +9,12 @@ size = Vector2(36, 28)
 [node name="UFO" type="Area2D" unique_id=2117648397]
 script = ExtResource("1_7cik0")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=261887991]
+scale = Vector2(0.087890625, 0.087890625)
+texture = ExtResource("2_dw4pw")
+
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=2091674901]
+visible = false
 color = Color(0.5622843, 0.69647413, 1.1551381e-06, 1)
 polygon = PackedVector2Array(-5, -21, 12, -21, 17, -10, 31, -1, 15, 11, -7, 12, -24, -1, -10, -9)
 

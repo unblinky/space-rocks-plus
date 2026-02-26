@@ -12,7 +12,7 @@ var rocks: Array[Rock]
 func _ready() -> void:
 	ufo_timer.timeout.connect(spawn_ufo)
 	spawn_ufo()
-	#spawn_rocks(spawn_count)
+	spawn_rocks(spawn_count)
 
 func spawn_ufo():
 	var ufo = UFO.instantiate()
