@@ -24,6 +24,7 @@ func split():
 	if scale.x > 0.25:
 		for i in 2:
 			var rock: Rock = ROCK.instantiate()
+			rock.main = main
 			rock.position = position
 			rock.scale = scale * 0.5
 			get_parent().add_child(rock)
@@ -40,6 +41,9 @@ func on_area_entered(other_area: Area2D):
 			other_area.player.update_score(1)
 		other_area.destroy()
 		self.call_deferred("split")
+		
+		if main.has_no_rocks():
+			main.trigger_next_level()
 	
 	elif other_area is Ship:
 		other_area.destroy()
