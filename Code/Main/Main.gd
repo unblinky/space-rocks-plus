@@ -7,7 +7,7 @@ const UFO = preload("res://UFO/UFO.tscn")
 
 @onready var ufo_timer: Timer = $UfoTimer
 
-var rock_count: int = 4
+var rock_count: int = 1
 var rocks: Array[Rock]
 
 func _ready() -> void:
@@ -30,13 +30,18 @@ func spawn_rocks(count: int):
 	
 	print("Rocks: ", rocks)
 
-func has_no_rocks() -> bool:
-	if rocks.is_empty():
-		print("Rocks: ", rocks)
-		return true
-	return false
-
-func trigger_next_level():
-	# Set timer to delay rock spawn?
-	rock_count += 1
+## Called by the Play Button.
+func start_round():
 	spawn_rocks(rock_count)
+	spawn_player()
+
+func remove_rock(rock: Rock):
+	rocks.erase(rock)
+	rock.destroy()
+
+func check_round_over():
+	print("Rock Number: ", rocks.size())
+	if rocks.size() < 1:
+		print("Never getting hereereere")
+		rock_count += 1
+		spawn_rocks(rock_count)

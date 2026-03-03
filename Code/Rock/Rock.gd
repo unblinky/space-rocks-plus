@@ -25,11 +25,11 @@ func split():
 		for i in 2:
 			var rock: Rock = ROCK.instantiate()
 			rock.main = main
+			main.rocks.append(rock)
 			rock.position = position
 			rock.scale = scale * 0.5
 			get_parent().add_child(rock)
 	
-	destroy()
 
 func destroy():
 	queue_free()
@@ -41,10 +41,9 @@ func on_area_entered(other_area: Area2D):
 			other_area.player.update_score(1)
 		other_area.destroy()
 		self.call_deferred("split")
+		main.remove_rock(self)
+		main.call_deferred("check_round_over")
 		
-		if main.has_no_rocks():
-			main.trigger_next_level()
-	
 	elif other_area is Ship:
 		other_area.destroy()
 		if self != null:

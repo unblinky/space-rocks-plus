@@ -18,9 +18,7 @@ func _process(_delta: float) -> void:
 		self.visible = get_tree().paused
 
 func on_play_pressed():
-	var main: Main = get_parent()
-	main.spawn_rocks(1)
-	main.spawn_player()
+	get_parent().start_round()
 	hide()
 
 func on_continue_pressed():

@@ -26,7 +26,6 @@ func _process(delta: float) -> void:
 		var direction = Vector2(sin(rotation), -cos(rotation))
 		velocity += direction * speed * delta
 		flame.show()
-		print("Thrust")
 		
 	if Input.is_action_just_released("thrust"):
 		flame.hide()
@@ -38,8 +37,7 @@ func _process(delta: float) -> void:
 		bullet.position = self.position
 		bullet.rotation = self.rotation
 		self.get_parent().add_child(bullet)
-		print("fire")
-
+	
 	position += velocity * delta
 
 ## Destroy the ship and free the resourses.
