@@ -40,3 +40,8 @@ layout_mode = 2
 
 [node name="Life7" parent="VBox/LivesUI" unique_id=1955336839 instance=ExtResource("2_q3lat")]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox" unique_id=446835496]
+layout_mode = 2
+text = "Press Space to launch!"
+horizontal_alignment = 2

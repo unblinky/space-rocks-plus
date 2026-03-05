@@ -10,12 +10,19 @@ func _ready() -> void:
 	play_button.pressed.connect(on_play_pressed)
 	continue_button.pressed.connect(on_continue_pressed)
 	quit_button.pressed.connect(on_quit_pressed)
+	
+	# Visibiliy.
+	self.show()
+	play_button.show()
 	continue_button.hide()
+	quit_button.show()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		get_tree().paused = !get_tree().paused
 		self.visible = get_tree().paused
+		play_button.hide()
+		continue_button.show()
 
 func on_play_pressed():
 	get_parent().start_round()

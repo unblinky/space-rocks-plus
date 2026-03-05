@@ -13,11 +13,6 @@ script = ExtResource("1_qratc")
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_v7qj8")
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1939225971]
-visible = false
-color = Color(0.83472717, 0.23181972, 0.6745137, 1)
-polygon = PackedVector2Array(-0.29057562, 7.963656, -4.4484696, -0.35213232, 0.3455912, -4.5685673, 6.8071146, -0.26088428, 3.4817295, 4.9333453, 1.5420431, 19.287037)
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1044155219]
 texture_filter = 1
 position = Vector2(0, 9)

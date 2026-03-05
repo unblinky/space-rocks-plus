@@ -6,8 +6,9 @@ const ROCK = preload("res://Rock/Rock.tscn")
 const UFO = preload("res://UFO/UFO.tscn")
 
 @onready var ufo_timer: Timer = $UfoTimer
+@onready var pause_menu: PauseMenu = $PauseMenu
 
-var rock_count: int = 1
+var rock_count: int = 4
 var rocks: Array[Rock]
 
 func _ready() -> void:
@@ -28,20 +29,25 @@ func spawn_rocks(count: int):
 		add_child(rock)
 		rocks.append(rock)
 	
-	print("Rocks: ", rocks)
+	#print("Rocks: ", rocks)
 
 ## Called by the Play Button.
 func start_round():
 	spawn_rocks(rock_count)
 	spawn_player()
+	ufo_timer.start()
 
 func remove_rock(rock: Rock):
 	rocks.erase(rock)
 	rock.destroy()
 
 func check_round_over():
-	print("Rock Number: ", rocks.size())
+	#print("Rock Number: ", rocks.size())
 	if rocks.size() < 1:
-		print("Never getting hereereere")
 		rock_count += 1
 		spawn_rocks(rock_count)
+
+func game_over():
+	pause_menu.show()
+	pause_menu.play_button.show()
+	pause_menu.continue_button.hide()

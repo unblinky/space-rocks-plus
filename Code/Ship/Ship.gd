@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 		
 	# Spawn bullet, pos, reparent.
 	if Input.is_action_just_pressed("fire"):
-		var bullet: Bullet = BULLET.instantiate()
+		var bullet = BULLET.instantiate()
 		bullet.player = self.player
 		bullet.position = self.position
 		bullet.rotation = self.rotation

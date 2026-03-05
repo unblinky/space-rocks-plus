@@ -9,7 +9,7 @@ const LIFE = preload("res://Player/assets/life.tscn")
 
 var ship: Ship = null
 var score: int = 0 # TODO: Load Hi Score from save file.
-var lives: int = 5
+var lives: int = 3
 
 func _ready() -> void:
 	show()
@@ -27,9 +27,7 @@ func launch_ship():
 		ship.player = self
 		ship.position = get_viewport().size * 0.5
 		add_child(ship)
-		
 
-# TODO: Test later.
 func update_score(delta_score):
 	score += delta_score
 	score_ui.text = str(score)
@@ -46,3 +44,9 @@ func update_lives(delta_lives):
 	for i in lives:
 		var life = LIFE.instantiate()
 		lives_ui.add_child(life)
+
+
+func check_game_over():
+	print("More lives: ", lives)
+	if lives <= 0 and ship == null:
+		get_parent().game_over()

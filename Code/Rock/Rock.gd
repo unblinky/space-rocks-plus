@@ -13,8 +13,8 @@ func _ready() -> void:
 	area_entered.connect(on_area_entered)
 	
 	velocity = Vector2(randf_range(-speed, speed), randf_range(-speed, speed)) 
-	# HACK: Not dynamic.
-	sprites.frame = randi_range(0, 3)
+	sprites.frame = randi_range(0, sprites.sprite_frames.get_frame_count("default"))
+	#print("Frame Count: ", sprites.sprite_frames.get_frame_count("default"))
 
 func _process(delta: float) -> void:
 	super._process(delta)
@@ -29,7 +29,7 @@ func split():
 			rock.position = position
 			rock.scale = scale * 0.5
 			get_parent().add_child(rock)
-	
+
 
 func destroy():
 	queue_free()
@@ -41,10 +41,15 @@ func on_area_entered(other_area: Area2D):
 			other_area.player.update_score(1)
 		other_area.destroy()
 		self.call_deferred("split")
+		
+		# Update the rocks array and round over?
 		main.remove_rock(self)
 		main.call_deferred("check_round_over")
-		
+	
 	elif other_area is Ship:
+		## Order matters!?
 		other_area.destroy()
+		other_area.player.check_game_over()
+		
 		if self != null:
 			self.destroy()
