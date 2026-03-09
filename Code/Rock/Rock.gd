@@ -30,7 +30,6 @@ func split():
 			rock.scale = scale * 0.5
 			get_parent().add_child(rock)
 
-
 func destroy():
 	queue_free()
 

@@ -7,11 +7,13 @@ const BULLET = preload("res://Bullet/Bullet.tscn")
 
 var speed: float = 100.0 # px / sec.
 var velocity: Vector2 = Vector2.ZERO
+var point_value: int = 25
 
 func _ready() -> void:
 	# Signal hooks.
 	up_down_timer.timeout.connect(pick_up_down)
 	shoot_timer.timeout.connect(on_shoot)
+	area_entered.connect(on_area_entered)
 	
 	# Pick a screen edge.
 	if randi() % 2:
@@ -22,6 +24,23 @@ func _ready() -> void:
 		velocity.x = -speed
 	
 	position.y = randi_range(0, get_viewport().size.y)
+
+func on_area_entered(other_area: Area2D):
+	if other_area is Bullet:
+		if other_area.player != null:
+			other_area.player.update_score(point_value)
+			other_area.destroy()
+			destroy()
+	
+	elif other_area is Ship:
+		## Order matters!?
+		other_area.destroy()
+		other_area.player.check_game_over()
+		
+		# If bullet destroys first?
+		if self != null:
+			self.destroy()
+	
 
 func on_shoot():
 	var bullet = BULLET.instantiate()

@@ -4,10 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://bhnuy8c5hwrp6" path="res://Player/assets/life.tscn" id="2_q3lat"]
 
 [node name="Player" type="PanelContainer" unique_id=388721277]
-offset_left = 10.0
-offset_top = 8.0
-offset_right = 27.0
-offset_bottom = 35.0
+z_index = 9
+z_as_relative = false
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 257.0
+offset_bottom = 95.0
 script = ExtResource("1_q3lat")
 
 [node name="VBox" type="VBoxContainer" parent="." unique_id=2062923651]

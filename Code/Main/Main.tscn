@@ -7,6 +7,8 @@
 script = ExtResource("1")
 
 [node name="PauseMenu" parent="." unique_id=386824250 instance=ExtResource("3_amygn")]
+z_index = 2
+z_as_relative = false
 
 [node name="UfoTimer" type="Timer" parent="." unique_id=536544741]
 wait_time = 10.0

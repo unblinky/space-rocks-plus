@@ -26,7 +26,7 @@ func launch_ship():
 		ship = SHIP.instantiate()
 		ship.player = self
 		ship.position = get_viewport().size * 0.5
-		add_child(ship)
+		get_parent().add_child(ship)
 
 func update_score(delta_score):
 	score += delta_score
