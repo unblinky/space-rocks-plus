@@ -28,8 +28,6 @@ func spawn_rocks(count: int):
 		rock.main = self
 		add_child(rock)
 		rocks.append(rock)
-	
-	#print("Rocks: ", rocks)
 
 ## Called by the Play Button.
 func start_round():
